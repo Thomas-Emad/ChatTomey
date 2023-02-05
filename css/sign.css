@@ -1,0 +1,68 @@
+body {
+  font-family: "Cairo", sans-serif;
+  background-color: #ddd;
+}
+
+/* Box Sign Up */
+.box {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 10px;
+  border: solid 1px #c7c7c7;
+  padding: 20px 10px;
+}
+@media (max-width: 700px) {
+  .box {
+    width: 70%;
+  }
+}
+@media (max-width: 500px) {
+  .box {
+    width: 90%;
+  }
+}
+.box form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.box form .title {
+  text-align: center;
+  margin: 10px 0;
+}
+.box form input {
+  outline: none;
+  padding: 10px;
+  background-color: #f0f0f09c;
+  border: solid 1px rgb(182, 195, 255);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.box form input:hover {
+  box-shadow: 0 0 5px 1px rgb(182, 195, 255);
+}
+.box form input[type="submit"] {
+  width: 30%;
+  align-self: flex-end;
+  cursor: pointer;
+}
+.box form input[type="submit"]:hover {
+  background-color: rgb(133, 156, 255);
+  color: #fff;
+}
+.box form .trans_page {
+  color: #222;
+  transition: 0.3s;
+}
+.box form .trans_page:hover {
+  color: rgb(133, 156, 255);
+}
+.box form .error {
+  font-size: 0.9rem;
+  color: red;
+  margin: 0;
+}

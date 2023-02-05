@@ -1,0 +1,175 @@
+body {
+  font-family: "Cairo", sans-serif;
+  background-color: #ddd;
+}
+
+/* Box Chat */
+.chat {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 90%;
+  height: 90vh;
+  border: solid 1px #c7c7c7;
+  padding: 10px;
+}
+.chat .title_page {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.chat .title_page h2 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+.chat .title_page form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.chat .title_page form .username {
+  font-size: 1.1rem;
+}
+.chat .title_page form .logout {
+  outline: none;
+  background-color: transparent;
+  padding: 5px 15px;
+  transition: 0.3s;
+  border: solid 1px #c7c7c7;
+  cursor: pointer;
+}
+.chat .title_page form .logout:hover {
+  background-color: red;
+  color: #fff;
+}
+
+.chat .message {
+  width: 100%;
+  height: 80%;
+  padding: 5px 15px;
+  background-color: #eee;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.chat .message .box_mess {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.chat .message .me,
+.chat .message .other {
+  display: flex;
+  width: 100%;
+}
+.chat .message .me .mess,
+.chat .message .other .mess {
+  padding: 5px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  max-width: 80%;
+}
+.chat .message .me {
+  flex-direction: column;
+  align-items: flex-end;
+}
+.chat .img_profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.chat .message .me .text {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 7px;
+}
+.chat .message .me .text .mess {
+  background-color: #2196f3;
+}
+.chat .message .other {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.chat .message .other .text {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 7px;
+}
+.chat .message .other .text .mess {
+  background-color: #607d8b;
+}
+.chat .message .time_send {
+  font-size: 0.8rem;
+  display: block;
+  width: fit-content;
+  text-align: right;
+  padding: 5px 10px;
+  color: #999;
+}
+@media (max-width: 400px) {
+  .chat .message .me,
+  .chat .message .other {
+    width: 90%;
+  }
+}
+
+.chat .send_mess form {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  justify-content: space-between;
+}
+.chat .send_mess form input {
+  padding: 7px 10px;
+  transition: 0.3s;
+}
+.chat .send_mess form input[type="text"] {
+  width: 85%;
+  border: solid 1px #c7c7c7;
+  outline: none;
+}
+.chat .send_mess form input[type="text"]:hover,
+.chat .send_mess form input[type="text"]:focus {
+  box-shadow: 0 0 3px 1px #2196f3;
+}
+.chat .send_mess form input[type="submit"] {
+  width: calc(15% - 10px);
+  border: solid 1px #c7c7c7;
+  outline: none;
+  cursor: pointer;
+}
+.chat .send_mess form input[type="submit"]:hover {
+  color: #fff;
+  background-color: #2196f3;
+  box-shadow: 0 0 3px 1px #2196f3;
+}
+.chat,
+.chat .title_page form .logout,
+.chat .message,
+.chat .send_mess form input {
+  border-radius: 15px;
+}
+@media (max-width: 500px) {
+  .chat .title_page {
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .chat .message {
+    height: 75%;
+  }
+  .chat .send_mess form {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .chat .send_mess form input[type="submit"],
+  .chat .send_mess form input[type="text"] {
+    width: 100%;
+  }
+}
