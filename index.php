@@ -127,8 +127,8 @@ if (isset($_POST['delete_account'])) {
             <div class="input-group mb-2">
               <input type="file" class="form-control" name="change_img">
             </div>
-            <div class="input-group flex-nowrap mb-2">Time Create
-              <span class="input-group-text" id="addon-wrapping"></span>
+            <div class="input-group flex-nowrap mb-2">
+              <span class="input-group-text" id="addon-wrapping">Time Create</span>
               <input type="text" class="form-control" name="img_profile_new" value="<?php echo $time_create; ?>" placeholder="Time Create" disabled>
             </div>
             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_acc">
