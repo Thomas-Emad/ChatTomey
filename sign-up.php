@@ -12,10 +12,13 @@ if (isset($_COOKIE['user_name'])) {
     $que = mysqli_query($db, $sql);
     $row = mysqli_fetch_assoc($que);
     if ($que->num_rows == 1) {
-      setcookie('name', $row['name'], (time() + (60 * 60  * 60 * 24 * 30)));
-      setcookie('user_name', $row['user_name'], (time() + (60 * 60  * 60 * 24 * 30)));
-      setcookie('email', $row['email'], (time() + (60 * 60  * 60 * 24 * 30)));
-      setcookie('img_user', $row['image'], (time() + (60 * 60 * 24 * 30)));
+      $TimeEndCookies = time() + (60 * 60  * 60 * 24 * 30);
+      setcookie('name', $row['name'], $TimeEndCookies);
+      setcookie('user_name', $row['user_name'], $TimeEndCookies);
+      setcookie('img_user', $row['image'], $TimeEndCookies);
+      setcookie('email', $row['email'], $TimeEndCookies);
+      setcookie('password', $row['password'], $TimeEndCookies);
+      setcookie('time_create', $row['time_create'], $TimeEndCookies);
       header('Location: index.php');
     } else {
       $error = 'Error In Your Email Or Password.';

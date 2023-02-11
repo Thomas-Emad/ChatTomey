@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 03, 2023 at 08:37 PM
+-- Generation Time: Feb 11, 2023 at 11:30 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -39,15 +39,8 @@ CREATE TABLE `messages` (
 --
 
 INSERT INTO `messages` (`id`, `user_name`, `message`, `time_send`) VALUES
-(32, 'tom', 'Hi', '2023-02-03 20:54:23'),
-(33, 'tom', 'Hi', '2023-02-03 20:57:07'),
-(34, 'tom', 'Hi', '2023-02-03 20:58:37'),
-(35, 'tom', 'Hi', '2023-02-03 20:59:16'),
-(36, 'tom', 'Hi', '2023-02-03 20:59:22'),
-(37, 'ag1', 'Hello', '2023-02-03 21:11:05'),
-(38, 'ag1', 'how are Your', '2023-02-03 21:23:34'),
-(39, 'ag1', '.', '2023-02-03 21:24:29'),
-(40, 'tom', 'sadad', '2023-02-03 21:34:18');
+(61, 'age', 'Hello', '2023-02-05 17:45:40'),
+(63, 'admin', 'hi', '2023-02-10 22:03:19');
 
 -- --------------------------------------------------------
 
@@ -58,19 +51,20 @@ INSERT INTO `messages` (`id`, `user_name`, `message`, `time_send`) VALUES
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `name` char(11) NOT NULL,
-  `image` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL DEFAULT 'img_user/someone.png',
   `user_name` char(11) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(20) NOT NULL
+  `password` varchar(20) NOT NULL,
+  `time_create` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `image`, `user_name`, `email`, `password`) VALUES
-(21, 'Tom', ' img_user/tom.png', 'tom', 't@gmail.com', '123456'),
-(22, 'Ag1', ' img_user/ag1.png', 'ag1', 'aghnatiosemad@gmail.com', '123456789');
+INSERT INTO `users` (`id`, `name`, `image`, `user_name`, `email`, `password`, `time_create`) VALUES
+(27, 'age', ' img_user/age.png', 'age', 'aghnatiosemad@gmail.com', '123456', '2023-02-10 18:31:20'),
+(28, 'admin', ' img_user/someone.png', 'admin', 'admin@gmail.com', '123456', '2023-02-10 20:03:01');
 
 --
 -- Indexes for dumped tables
@@ -98,13 +92,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- Constraints for dumped tables

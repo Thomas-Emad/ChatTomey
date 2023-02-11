@@ -22,7 +22,7 @@ body {
   justify-content: space-between;
 }
 .chat .title_page h2 {
-  font-size: 1.4rem;
+  font-size: 1.4rem !important;
   margin: 0;
 }
 .chat .title_page form {
@@ -77,10 +77,29 @@ body {
   flex-direction: column;
   align-items: flex-end;
 }
-.chat .img_profile {
+.chat .profile-info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 10px;
+  border-radius: 50px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.chat .profile-info:hover {
+  background-color: #ddd3;
+}
+.info-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.img_profile {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  cursor: pointer;
 }
 .chat .message .me .text {
   display: flex;
@@ -159,10 +178,9 @@ body {
   .chat .title_page {
     justify-content: center;
     flex-direction: column;
-    gap: 10px;
   }
   .chat .message {
-    height: 75%;
+    height: 66%;
   }
   .chat .send_mess form {
     flex-direction: column;
