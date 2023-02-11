@@ -10,7 +10,7 @@ if (isset($_COOKIE['user_name'])) {
   $password_now = $_COOKIE['password'];
   $time_create = $_COOKIE['time_create'];
 } else {
-  header('Location: sign-up.php');
+  header('Location: sign-in.php');
   exit();
 }
 
